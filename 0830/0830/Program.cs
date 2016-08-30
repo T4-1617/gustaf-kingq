@@ -16,7 +16,7 @@ namespace _0830
             System.Console.Write("Well isn't that a name. " + n1 + ". What's your last name then? This other question is ending this whole English-longer-than-necessary-bit and we'll go back to Swedish after I'v recieved your answer.");
             Console.WriteLine("");
             string n2 = Console.ReadLine();
-            Console.Write("Hej " + n1 + " " + n2 + "!");
+            Console.Write("Hej " + n2 + "!");
             Console.ReadLine();
         }
     }
