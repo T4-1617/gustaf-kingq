@@ -29,12 +29,19 @@ namespace _0830_2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string n1 = Console.ReadLine();
 
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            string n2 = Console.ReadLine();
 
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
         }
     }
 }
