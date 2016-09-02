@@ -19,8 +19,8 @@ namespace _0901
 
             Console.WriteLine("Good. What is your last name?");
             string name2 = Console.ReadLine();
-            string name1_normal = name1.ToUpper()[0] + name1.Substring(1);
-            string name2_normal = name2.ToUpper()[0] + name2.Substring(1);
+            string name1_normal = name1.ToUpper()[0] + name1.Substring(1).ToLower();
+            string name2_normal = name2.ToUpper()[0] + name2.Substring(1).ToLower();
             string fullname = name1_normal + " " + name2_normal;
 
 
