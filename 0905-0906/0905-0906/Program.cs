@@ -12,8 +12,6 @@ namespace _0905_0906
             //input for additional cards and generally play around with
             //how the output message will behave
 
-            //
-
             //First above all else should be the three basic variables:
             //the colors of the cards, the groups and the amount of cards
             const int colors = 4;
@@ -27,7 +25,7 @@ namespace _0905_0906
             static bool[,] BoolDeck = new bool[colors, groups];
 
             //Initializing the string array is essential
-            static string[,] cardDeckInit(string[,] StringDeck)
+            static string[,] initializer(string[,] StringDeck)
         {
             //Now we need a proper variable for the choosing of the colors
             //For now, the four are represented by 1-4 in the order
@@ -39,10 +37,44 @@ namespace _0905_0906
             //It should be created empty
             string colorChooser2 = string.Empty;
 
+            //Here begins the loop
+            //As a first, it loops once for every color overall, which would 
+            //mean four times, having x represent the amount of used colors
+            for (int x = 0; x < colors; x++)
+            {
+                //While it loops it also subloops once for every group that 
+                //remains, meaning thirteen times four times, having y
+                //represent the amount of used groups
+                for (int y = 1; y - 1 < groups; y++)
+                {
+                    switch (colorChooser)
+                    {
+                        //Based on the colorChooser variable, the switch will
+                        //conclude which color that should be used
+                        case 1:
+                            colorChooser2 = "Hearts";
+                            break;
+                        case 2:
+                            colorChooser2 = "Diamonds";
+                            break;
+                        case 3:
+                            colorChooser2 = "Spades";
+                            break;
+                        case 4:
+                            colorChooser2 = "Clubs";
+                            break;
+                    }
 
+                }
+                //Ups the chooser counter one tick
+                colorChooser++;
+
+            }
+            //Returns the spring array
+            return StringDeck;
         }
+    }
+}
 
 
-    }
-    }
 
