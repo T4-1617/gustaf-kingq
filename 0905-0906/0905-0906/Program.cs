@@ -63,18 +63,99 @@ namespace _0905_0906
                         case 4:
                             colorChooser2 = "Clubs";
                             break;
+                        default:
+                            colorChooser2 = "Error with string tempColourHolder!";
+                            break;
                     }
-
+                    //Checks for Ace, Jack, Queen & King and names there after, else just give the y number as name
+                    //Takes y - 1 so we don't try to write outside the array
+                    switch (y)
+                    {
+                        case 1:
+                            StringDeck[x, y - 1] = colorChooser2 + " " + "Ace";
+                            break;
+                        case 11:
+                            StringDeck[x, y - 1] = colorChooser2 + " " + "Jack";
+                            break;
+                        case 12:
+                            StringDeck[x, y - 1] = colorChooser2 + " " + "Queen";
+                            break;
+                        case 13:
+                            StringDeck[x, y - 1] = colorChooser2 + " " + "King";
+                            break;
+                        default:
+                            //Assign value to array, whitespace used for seperating colour & type
+                            StringDeck[x, y - 1] = colorChooser2 + " " + y.ToString();
+                            break;
+                    }
+                    //End of inner-loop
                 }
                 //Ups the chooser counter one tick
                 colorChooser++;
-
             }
             //Returns the spring array
             return StringDeck;
         }
+        //Function for checking if a card has been placed
+        static bool cardStatus(int x, int y)
+        {
+            bool cardStatus2 = false;
+
+            if (BoolDeck[x, y] == true)
+            {
+                cardStatus2 = true;
+            }
+
+            return cardStatus2;
+        }
+        //Function, using the new x and y, a randomizer variable and a counter t
+        static string card_randomizer()
+        {
+            //Sets up both a randomizer variable but also a new x and y
+            //since they weren't properly declared before
+            Random randomizer = new Random();
+            int x = randomizer.Next(0, colors);
+            int y = randomizer.Next(0, groups);
+
+            //Return used so it updates actual value in original function
+            if (cardStatus(x, y) == true)
+            {
+                return card_randomizer();
+            }
+            int counter = 0;
+            //Ups the newly added variable one tick
+            counter += (y + 1);
+            //Gives the output card the status "true" so it won't be dealt again
+            BoolDeck[x, y] = true;
+            return StringDeck[x, y];
+        }
+
+        static void Main(string[] args)
+        {
+            initializer(StringDeck);
+            int counter = 1;
+            //The closing loop that returns writelines about it's desired input,
+            //how many card's placed, how many that's left and the users
+            //accumilated points 
+            for (int i = 1; i <= amountOfCards; i++)
+            {
+                Console.WriteLine("Tap enter to recieve another card.");
+                Console.ReadLine();
+
+                //Summarized as:
+                //counter = Placed cards
+                //card_randomizer = The kind of placed card (color and group)
+                //amountofCards-counter= How many cards that's left
+                Console.WriteLine("Amount of placed cards(s): " + counter);
+                Console.WriteLine("The type of dealt card: " + card_randomizer());
+                Console.WriteLine("Amount of cards left: " + (amountOfCards - counter));
+                Console.WriteLine("Earned points: " + counter);
+
+                //Ups the counter a tick
+                counter++;
+            }
+        }
     }
 }
-
 
 
