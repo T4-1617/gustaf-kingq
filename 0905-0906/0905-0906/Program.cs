@@ -10,7 +10,6 @@ namespace _0905_0906
     {
         static void Main(string[] args)
         {
-
         }
     }
 }
