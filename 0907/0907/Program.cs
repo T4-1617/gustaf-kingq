@@ -10,7 +10,41 @@ namespace _0907
     {
         static void Main(string[] args)
         {
+            //Prior to the last assignment, we'll need a set of
+            //the three basic variables: colors, groups and amount 
+            //of cards
+            //Those variables needs to be doubled since we're
+            //simulating two decks
+            const int suits = 8;
+            const int ranks = 26;
+            const int amoundOfCards = 104;
 
+            Random randomizer = new Random();
+            int x = randomizer.Next(0, suits);
+            int y = randomizer.Next(0, ranks);
+
+
+            //The variable for the point system
+            int points = 0;
+
+            if (points == 21)
+            {
+                Console.WriteLine("You won, son! Returning all your points... ");
+                points = 0;
+                
+            }
+            else
+            {
+                if (points > 21)
+                {
+                    Console.WriteLine("You bust! Returning all your points... ");
+                    points = 0;
+                }
+                else
+                {
+                    inner_blerp
+                }
+            }
         }
     }
 }
