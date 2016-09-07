@@ -33,7 +33,6 @@ namespace _0907
             {
                 Console.WriteLine("You won, son! Returning all your points... ");
                 points = 0;
-                
             }
             else
             {
@@ -44,28 +43,29 @@ namespace _0907
                 }
                 else
                 {
-                    Console.WriteLine("Would you like another card? ");
-                    Console.WriteLine("Type 1 for Yes");
-                    Console.WriteLine("Type 2 for No");
-                    int answer = Convert.ToInt32(Console.ReadLine());
-                    switch (answer)
+                    Console.WriteLine("Would you like a card? ");
+                    Console.WriteLine("Type 1 for yes");
+                    Console.WriteLine("Type 2 for no");
+                    string answer = Console.ReadLine();
+                    switch (answer.ToLower())
                     {
-                        case 1:
+                        case "yes":
                             Console.WriteLine("You are dealt a: ");
-
-                        case 2:
+                            break;
+                        case "no":
                             Console.WriteLine("You accumulated; " + points + " points that round.");
                             points = 0;
+                            break;
                     }
-                        
 
-
-                    if (amountOfCards = 0)
+                    if (amountOfCards == 0)
                     {
                         Console.WriteLine("You, sir, have run completely out of cards. GAME OVER.");
-                        break;
                     }
-                    else { }
+                    else
+                    {
+
+                    }
                 }
             }
         }
