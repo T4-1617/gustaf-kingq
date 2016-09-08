@@ -17,7 +17,9 @@ namespace _0908
         const int ranks = 13;
         //Since we want the game to be over when the deck is depleted, it can't be constant
         static int amountOfCards = 208;
-        static Double score = 0;
+        static int score = 0;
+        static int comScore = 0;
+        static int total = 0;
 
         //Creates a variable for checking...
 
@@ -87,7 +89,6 @@ namespace _0908
                             randomSuit = "Clubs";
                             break;
                         default:
-                            check1 = 1;
                             randomSuit = "There wasn't any randomSuit outputted...";
                             break;
                     }
@@ -146,6 +147,28 @@ namespace _0908
             Deck_of_Boolean[x, y] = true;
             return Deck_of_String[x, y];
 
+            bool all_x_and_y = Deck_of_Boolean[suits,ranks];
+
+
+        }
+        //A complete and utter duplicate of the cardRandomizer that instead of increasing the player's score,
+        //it increases the computer's/dealer's
+        static string cardRandomizer2()
+        {
+            Random randomizer2 = new Random();
+            int x2 = randomizer2.Next(1, suits);
+            int y2 = randomizer2.Next(1, ranks);
+
+            if (check3(x2, y2) == true)
+            {
+                return cardRandomizer();
+            }
+            comScore += y2;
+            Deck_of_Boolean[x2, y2] = true;
+            return Deck_of_String[x2, y2];
+
+            bool all_x_and_y = Deck_of_Boolean[suits, ranks];
+
 
         }
 
@@ -154,10 +177,53 @@ namespace _0908
 
             initializer(Deck_of_String);
             string computersChoice = cardRandomizer();
-            for (int i = 0; i < amountOfCards;)
+            if (amountOfCards > 0)
             {
+                amountOfCards -= 1;
+                Console.WriteLine("BEEP-BOOP. I-HAVE-DRAWN-THE-CARD-" + cardRandomizer2().ToUpper());
+                Console.WriteLine();
+                Console.WriteLine("Press any key to continue...");
+                Console.WriteLine();
+                Console.ReadLine();
+                Console.WriteLine("Would you like a card? (Yes/No)");
+                string answer = Console.ReadLine();
+                switch (answer.ToLower())
+                { 
+                    case "yes":
+                            amountOfCards -= 1;
+                            Console.WriteLine("There are " + amountOfCards + " cards left in the deck.");
+                            Console.WriteLine("You are dealt a: " + cardRandomizer());
+                            Console.WriteLine("You have currently cards worth of " + score + " score.");
+                            Console.WriteLine();
+                            Console.WriteLine("Press any key to continue...");
+                            Console.WriteLine();
+                            Console.ReadLine();
+
+                    case "no":
+                        Console.WriteLine("You accumilated; " + score + " score that round.");
+
+
+
+
+
+
+                        score = 0;
+                        Console.WriteLine();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.WriteLine();
+                        Console.ReadLine();
+                        break;
+
+                    default:
+                        Console.WriteLine("That is not Yes or No. Please enter a valid input.");
+                        Console.WriteLine();
+
+                        break;
+                }
+
                 if (score == 21)
                 {
+
                     Console.WriteLine("You won, son! Returning all your score... ");
                     score = 0;
                     Console.WriteLine();
@@ -178,52 +244,16 @@ namespace _0908
                     }
                     else
                     {
-                        Console.WriteLine("Would you like a card? (Yes/No)");
-                        string answer = Console.ReadLine();
-                        switch (answer.ToLower())
-                        {
-                            case "yes":
-                                if (check1 == 1)
-                                {
-                                    Console.WriteLine("A card has not been dealt.");
-                                    check1 = 0;
-                                    Console.WriteLine();
-                                    Console.WriteLine("Press any key to continue...");
-                                    Console.WriteLine();
-                                    Console.ReadLine();
-                                    break;
-                                }
-                                else
-                                {
-                                    amountOfCards -= 1;
-                                    Console.WriteLine("There are " + amountOfCards + " cards left in the deck.");
-                                    Console.WriteLine("You are dealt a: " + cardRandomizer());
-                                    Console.WriteLine("You have currently cards worth of " + score + " score.");
-                                    Console.WriteLine();
-                                    Console.WriteLine("Press any key to continue...");
-                                    Console.WriteLine();
-                                    Console.ReadLine();
-                                    break;
-                                }
-
-                            case "no":
-                                Console.WriteLine("You accumilated; " + score + " score that round.");
-                                score = 0;
-                                Console.WriteLine();
-                                Console.WriteLine("Press any key to continue...");
-                                Console.WriteLine();
-                                Console.ReadLine();
-                                break;
-
-                            default:
-                                Console.WriteLine("That is not Yes or No. Please enter a valid input.");
-                                Console.WriteLine();
-
-                                break;
-
+                       
                         }
                     }
-                }
+
+            }
+            else
+            {
+                amountOfCards += 208;
+                bool all_x_and_y = Deck_of_Boolean[suits, ranks];
+                all_x_and_y = false;
             }
         }
     }
