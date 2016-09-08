@@ -13,11 +13,11 @@ namespace _0908
         //of cards
         //Those variables needs to be doubled since we're
         //simulating two decks
-        const int suits = 8;
+        const int suits = 16;
         const int ranks = 13;
         //Since we want the game to be over when the deck is depleted, it can't be constant
-        static int amountOfCards = 104;
-        static Double points = 0;
+        static int amountOfCards = 208;
+        static Double score = 0;
 
         //Creates a variable for checking...
 
@@ -38,44 +38,58 @@ namespace _0908
                 {
                     switch (check2)
                     {
-
                         case 1:
                             randomSuit = "Hearts";
                             break;
-
                         case 2:
                             randomSuit = "Diamonds";
                             break;
-
                         case 3:
                             randomSuit = "Spades";
                             break;
-
                         case 4:
                             randomSuit = "Clubs";
                             break;
-
                         case 5:
                             randomSuit = "Hearts";
                             break;
-
                         case 6:
                             randomSuit = "Diamonds";
                             break;
-
                         case 7:
                             randomSuit = "Spades";
                             break;
-
                         case 8:
                             randomSuit = "Clubs";
                             break;
-
+                        case 9:
+                            randomSuit = "Hearts";
+                            break;
+                        case 10:
+                            randomSuit = "Diamonds";
+                            break;
+                        case 11:
+                            randomSuit = "Spades";
+                            break;
+                        case 12:
+                            randomSuit = "Clubs";
+                            break;
+                        case 13:
+                            randomSuit = "Hearts";
+                            break;
+                        case 14:
+                            randomSuit = "Diamonds";
+                            break;
+                        case 15:
+                            randomSuit = "Spades";
+                            break;
+                        case 16:
+                            randomSuit = "Clubs";
+                            break;
                         default:
                             check1 = 1;
                             randomSuit = "There wasn't any randomSuit outputted...";
                             break;
-
                     }
                     switch (y)
                     {
@@ -128,7 +142,7 @@ namespace _0908
             {
                 return cardRandomizer();
             }
-            points += y;
+            score += y;
             Deck_of_Boolean[x, y] = true;
             return Deck_of_String[x, y];
 
@@ -137,13 +151,15 @@ namespace _0908
 
         static void Main(string[] args)
         {
+
             initializer(Deck_of_String);
+            string computersChoice = cardRandomizer();
             for (int i = 0; i < amountOfCards;)
             {
-                if (points == 21)
+                if (score == 21)
                 {
-                    Console.WriteLine("You won, son! Returning all your points... ");
-                    points = 0;
+                    Console.WriteLine("You won, son! Returning all your score... ");
+                    score = 0;
                     Console.WriteLine();
                     Console.WriteLine("Press any key to continue...");
                     Console.WriteLine();
@@ -151,10 +167,10 @@ namespace _0908
                 }
                 else
                 {
-                    if (points > 21)
+                    if (score > 21)
                     {
-                        Console.WriteLine("You bust! Returning all your points... ");
-                        points = 0;
+                        Console.WriteLine("You bust! Returning all your score... ");
+                        score = 0;
                         Console.WriteLine();
                         Console.WriteLine("Press any key to continue...");
                         Console.WriteLine();
@@ -182,7 +198,7 @@ namespace _0908
                                     amountOfCards -= 1;
                                     Console.WriteLine("There are " + amountOfCards + " cards left in the deck.");
                                     Console.WriteLine("You are dealt a: " + cardRandomizer());
-                                    Console.WriteLine("You have currently cards worth of " + points + " points.");
+                                    Console.WriteLine("You have currently cards worth of " + score + " score.");
                                     Console.WriteLine();
                                     Console.WriteLine("Press any key to continue...");
                                     Console.WriteLine();
@@ -191,8 +207,8 @@ namespace _0908
                                 }
 
                             case "no":
-                                Console.WriteLine("You accumilated; " + points + " points that round.");
-                                points = 0;
+                                Console.WriteLine("You accumilated; " + score + " score that round.");
+                                score = 0;
                                 Console.WriteLine();
                                 Console.WriteLine("Press any key to continue...");
                                 Console.WriteLine();
@@ -209,8 +225,6 @@ namespace _0908
                     }
                 }
             }
-
-            Console.WriteLine("You, sir, have run completely out of cards. GAME OVER.");
         }
     }
 }
