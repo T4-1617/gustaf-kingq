@@ -93,6 +93,7 @@ namespace _0905_0906
                 //Ups the chooser counter one tick
                 colorChooser++;
             }
+
             //Returns the spring array
             return StringDeck;
         }
