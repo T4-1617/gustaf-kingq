@@ -171,90 +171,97 @@ namespace _0908
 
 
         }
+        static void standardPrint()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Your score: " + score);
+            Console.WriteLine("COMP-score: " + comScore);
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine();
+            Console.ReadLine();
+        }
 
         static void Main(string[] args)
         {
-
             initializer(Deck_of_String);
-            string computersChoice = cardRandomizer();
-            if (amountOfCards > 0)
+            string computersChoice = cardRandomizer2();
+            int infinity = 1;
+            while (infinity == 1)
             {
-                amountOfCards -= 1;
-                Console.WriteLine("BEEP-BOOP. I-HAVE-DRAWN-THE-CARD-" + cardRandomizer2().ToUpper());
-                Console.WriteLine();
-                Console.WriteLine("Press any key to continue...");
-                Console.WriteLine();
-                Console.ReadLine();
-                Console.WriteLine("Would you like a card? (Yes/No)");
-                string answer = Console.ReadLine();
-                switch (answer.ToLower())
-                { 
-                    case "yes":
-                            amountOfCards -= 1;
-                            Console.WriteLine("There are " + amountOfCards + " cards left in the deck.");
-                            Console.WriteLine("You are dealt a: " + cardRandomizer());
-                            Console.WriteLine("You have currently cards worth of " + score + " score.");
-                            Console.WriteLine();
-                            Console.WriteLine("Press any key to continue...");
-                            Console.WriteLine();
-                            Console.ReadLine();
-
-                    case "no":
-                        Console.WriteLine("You accumilated; " + score + " score that round.");
-
-
-
-
-
-
-                        score = 0;
-                        Console.WriteLine();
-                        Console.WriteLine("Press any key to continue...");
-                        Console.WriteLine();
-                        Console.ReadLine();
-                        break;
-
-                    default:
-                        Console.WriteLine("That is not Yes or No. Please enter a valid input.");
-                        Console.WriteLine();
-
-                        break;
-                }
-
-                if (score == 21)
+                while (amountOfCards > 0)
                 {
+                    amountOfCards -= 1;
+                    Console.WriteLine("BEEP-BOOP. I-HAVE-DRAWN-THE-CARD-" + cardRandomizer2().ToUpper());
+                    standardPrint();
+                    int answerStatus = 0; //A statuscheck for the answer variable for the upcoming while loop. The while loop will conclude once the player answers "no".
+                    // 0 = initial/yes, triggers the while loop
+                    // 1 = no, concludes while loop
 
-                    Console.WriteLine("You won, son! Returning all your score... ");
-                    score = 0;
-                    Console.WriteLine();
-                    Console.WriteLine("Press any key to continue...");
-                    Console.WriteLine();
-                    Console.ReadLine();
-                }
-                else
-                {
-                    if (score > 21)
+                    while (answerStatus == 0)
                     {
-                        Console.WriteLine("You bust! Returning all your score... ");
-                        score = 0;
-                        Console.WriteLine();
-                        Console.WriteLine("Press any key to continue...");
-                        Console.WriteLine();
-                        Console.ReadLine();
-                    }
-                    else
-                    {
+                        Console.WriteLine("Would you like a card? (Yes/No)");
+                        string answer = Console.ReadLine();
+                        switch (answer.ToLower())
+                        {
+                            case "yes":
+                                amountOfCards -= 1;
+                                Console.WriteLine("There are " + amountOfCards + " cards left in the deck.");
+                                Console.WriteLine("You are dealt a: " + cardRandomizer());
+                                Console.WriteLine("You have currently cards worth of " + score + " score.");
+                                standardPrint();
+                                if (score == 21)
+                                {
+
+                                    Console.WriteLine("You won, son! Returning all your score... ");
+                                    score = 0;
+                                    standardPrint();
+                                }
+                                else
+                                {
+                                    if (score > 21)
+                                    {
+                                        Console.WriteLine("You bust! Returning all your score... ");
+                                        score = 0;
+                                        standardPrint();
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                }
+                                break;
+
+                            case "no":
+                                Console.WriteLine("You accumilated; " + score + " score that round.");
+                                answerStatus = 1;
+                                standardPrint();
+                                break;
+
+                            default:
+                                Console.WriteLine("That is not Yes or No. Please enter a valid input.");
+                                standardPrint();
+                                break;
+                        }
                        
                         }
+                    Console.WriteLine("I SHALL HAVE THE HIGHEST HAND:");
+                    amountOfCards -= 1;
+                    if (amountOfCards == 0)
+                    {
+                        break;
                     }
 
-            }
-            else
-            {
-                amountOfCards += 208;
-                bool all_x_and_y = Deck_of_Boolean[suits, ranks];
-                all_x_and_y = false;
-            }
+                    }
+
+
+                    }
+            Console.WriteLine("The game is concluded. Reshuffling deck...");
+            amountOfCards += 208;
+            bool all_x_and_y = Deck_of_Boolean[suits, ranks];
+            all_x_and_y = false;
         }
-    }
-}
+
+        }
+
+      }
