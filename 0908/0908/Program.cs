@@ -177,6 +177,7 @@ namespace _0908
             Console.WriteLine("Your score: " + score);
             Console.WriteLine("COMP score: " + comScore);
             Console.WriteLine("Total score: " + total);
+            Console.WriteLine("Card amount: " + amountOfCards);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Press any key to continue...");
@@ -214,10 +215,12 @@ namespace _0908
             initializer(Deck_of_String);
             string computersChoice = cardRandomizer2();
             int infinity = 1;
+            int reset = 0;
             while (infinity == 1)
             {
                 while (amountOfCards > 0)
                 {
+                    reset = 0;
                     amountOfCards -= 1;
                     comScore = 0;
                     Console.WriteLine("BEEP-BOOP. I-HAVE-DRAWN-THE-CARD-" + cardRandomizer2().ToUpper());
@@ -243,6 +246,7 @@ namespace _0908
                                         total += 3;
                                         playerWinning();
                                         skipPlayerDraw = 1;
+                                    reset = 1;
                                     }
                                     else
                                     {
@@ -251,6 +255,7 @@ namespace _0908
                                             Console.WriteLine("Player bust: -1 Total Score");
                                             playerLosing();
                                             skipPlayerDraw = 1;
+                                        reset = 1;
                                         }
                                         else
                                         {
@@ -274,37 +279,46 @@ namespace _0908
                         }
                         }
                     
-                    while (comScore < score+1)
+                        if (reset == 0)
                     {
-                        Console.WriteLine("I-SHALL-HAVE-THE-HIGHEST-HAND:");
-                        amountOfCards -= 1;
-                        Console.WriteLine("BEEP-BOOP. I-HAVE-DRAWN-THE-CARD-" + cardRandomizer2().ToUpper());
-                        standardPrint();
-
-                        if (comScore == 21)
+                        while (comScore < score + 1)
                         {
-                            Console.WriteLine("HAH-HAH! VICTORY!");
-                            playerLosing();
-                        }
+                            Console.WriteLine("I-SHALL-HAVE-THE-HIGHEST-HAND:");
+                            amountOfCards -= 1;
+                            Console.WriteLine("BEEP-BOOP. I-HAVE-DRAWN-THE-CARD-" + cardRandomizer2().ToUpper());
+                            standardPrint();
 
-                        if (comScore > 21)
-                        {
-                            Console.WriteLine("BEEP-BOop. I-HAve-looossst... :(");
-                            Console.WriteLine("Computer bust: +1 Total Score");
-                            playerWinning();
-                        }
+                            if (comScore == 21)
+                            {
+                                Console.WriteLine("HAH-HAH! BLACKJACK! FLAWLESS-VICTORY!");
+                                playerLosing();
+                            }
 
-                        if (amountOfCards == 0)
+                            if (comScore > 21)
+                            {
+                                Console.WriteLine("BEEP-BOop. I-HAve-looossst... :(");
+                                Console.WriteLine("Computer bust: +1 Total Score");
+                                total += 1;
+                                playerWinning();
+                            }
 
-                        {
-                            Console.WriteLine("OH-WAIT, NEVER-MIND. THE-DECK-IS-EMPTY. CONCLUDING-GAME:");
-                            break;
+                            if (amountOfCards == 0)
+
+                            {
+                                Console.WriteLine("OH-WAIT, NEVER-MIND. THE-DECK-IS-EMPTY. CONCLUDING-GAME:");
+                                break;
+                            }
                         }
+                        Console.WriteLine("HAH-HAH! VICTORY!");
+                        Console.WriteLine("Computer win: -1 Total score");
+                        playerLosing();
                     }
-                    Console.WriteLine("HAH-HAH! VICTORY!");
-                    Console.WriteLine("Computer win: -1 Total score");
-                    playerLosing();
+                        else
+                    {
+
+                    }
                 }
+                   
                     }
         }
 
