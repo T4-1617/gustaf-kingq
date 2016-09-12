@@ -16,49 +16,46 @@ namespace _0912
         {
             InitializeComponent();
         }
-        string fname;
-        string lname;
-        static Random r = new Random();
-        int ID = r.Next(100,201);
         int amountOfCustomers = 0;
+        string[] combinedCustomers = new string[0];
 
 
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        private void textBox1_TextChanged(object sender, EventArgs e) {}
+        private void textBox2_TextChanged(object sender, EventArgs e) {}
+        private void textBox3_TextChanged(object sender, EventArgs e) {}
         private void button1_Click(object sender, EventArgs e)
         {
             CustomerList customerInfo = new CustomerList();
             customerInfo.Fname = textBox1.Text;
             customerInfo.Lname = textBox2.Text;
-            customerInfo.IDNumber = ID;
-            amountOfCustomers += 1;
-            //ID 
+            //string fullname = customerInfo.Fname + " " + customerInfo.Lname;
+            Random r = new Random();
+            int ID = r.Next(100, 201);
+            bool[] listOfIDs = new bool[ID];
+            listOfIDs[customerInfo.IDNumber] = true;
 
-            listBox1.Items.Add("NEW CUSTOMER:");
+            if (listOfIDs[customerInfo.IDNumber] == true)
+            {
+                customerInfo.Active = true;
+                amountOfCustomers += 1;
+                //combinedCustomers[fullname] = fullname;
+            }
+            else
+            {
+                customerInfo.Active = false;
+            }
+            customerInfo.IDNumber = ID;
+
+            listBox1.Items.Add("NEW CUSTOMER NUMBER: " + amountOfCustomers);
             listBox1.Items.Add("IDNumber: " + customerInfo.IDNumber);
             listBox1.Items.Add("First name: " + customerInfo.Fname);
             listBox1.Items.Add("Last name: " + customerInfo.Lname);
-            listBox1.Items.Add("Active: ");
+            listBox1.Items.Add("Active: " + customerInfo.Active);
             listBox1.Items.Add("");
 
             textBox1.Text = "";
             textBox2.Text = "";
-            textBox3.Text = amountOfCustomers;
+            textBox3.Text = (amountOfCustomers + "    is the magic number");
 
         }
 
