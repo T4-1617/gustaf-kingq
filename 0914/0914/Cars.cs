@@ -13,12 +13,9 @@ namespace _0914
         public string color { get; set; }
         public bool bagageSpace { get; set; }
         public int seats { get; set; }
-        public bool automaticGearbox { get; set; }
-        public bool ac { get; set; }
-        public string maxSpeed { get; set; }
-        public string fuelType { get; set; }
         public int gasLperKM { get; set; }
         public string price { get; set; }
         public string regNumber { get; set; }
+        public bool ReadOnly { get; set; }
     }
 }
