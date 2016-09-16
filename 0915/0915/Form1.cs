@@ -27,17 +27,7 @@ namespace _0915
         private void button1_Click(object sender, EventArgs e)
         {
             BackingStore.Add(new Customer() { lname = textBox2.Text, fname = textBox1.Text });
-            if (radioButton2 = true)
-            {
 
-            }
-            else
-            {
-                if (radioButton2 = true)
-                {
-
-                }
-            }
 
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
