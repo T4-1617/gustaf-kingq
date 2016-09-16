@@ -57,7 +57,8 @@
             this.textBoxThankBook = new System.Windows.Forms.TextBox();
             this.listBoxShow = new System.Windows.Forms.ListBox();
             this.buttonBook = new System.Windows.Forms.Button();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
+            this.buttonInitialize = new System.Windows.Forms.Button();
+            this.labelAmount = new System.Windows.Forms.Label();
             this.panelAdd.SuspendLayout();
             this.panelReturn.SuspendLayout();
             this.panelShow.SuspendLayout();
@@ -98,9 +99,8 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 16);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 3;
-            this.label1.Text = "We have         cars available.";
             // 
             // panelAdd
             // 
@@ -352,24 +352,36 @@
             this.buttonBook.UseVisualStyleBackColor = true;
             this.buttonBook.Click += new System.EventHandler(this.buttonBook_Click);
             // 
-            // textBoxAmount
+            // buttonInitialize
             // 
-            this.textBoxAmount.Location = new System.Drawing.Point(91, 55);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.ReadOnly = true;
-            this.textBoxAmount.Size = new System.Drawing.Size(22, 22);
-            this.textBoxAmount.TabIndex = 9;
-            this.textBoxAmount.TextChanged += new System.EventHandler(this.textBoxAmount_TextChanged);
+            this.buttonInitialize.Location = new System.Drawing.Point(322, 94);
+            this.buttonInitialize.Name = "buttonInitialize";
+            this.buttonInitialize.Size = new System.Drawing.Size(93, 41);
+            this.buttonInitialize.TabIndex = 10;
+            this.buttonInitialize.Text = "Initialize Cars";
+            this.buttonInitialize.UseVisualStyleBackColor = true;
+            this.buttonInitialize.Click += new System.EventHandler(this.buttonInitialize_Click);
+            // 
+            // labelAmount
+            // 
+            this.labelAmount.AutoSize = true;
+            this.labelAmount.Location = new System.Drawing.Point(32, 34);
+            this.labelAmount.Name = "labelAmount";
+            this.labelAmount.Size = new System.Drawing.Size(96, 16);
+            this.labelAmount.TabIndex = 10;
+            this.labelAmount.Text = "Available Cars";
+            this.labelAmount.Click += new System.EventHandler(this.labelAmount_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 445);
-            this.Controls.Add(this.panelShow);
             this.Controls.Add(this.panelAdd);
+            this.Controls.Add(this.labelAmount);
+            this.Controls.Add(this.buttonInitialize);
+            this.Controls.Add(this.panelShow);
             this.Controls.Add(this.panelReturn);
-            this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonReturnCar);
             this.Controls.Add(this.buttonAddCar);
@@ -418,7 +430,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxThankBook;
-        private System.Windows.Forms.TextBox textBoxAmount;
+        private System.Windows.Forms.Button buttonInitialize;
+        private System.Windows.Forms.Label labelAmount;
     }
 }
 

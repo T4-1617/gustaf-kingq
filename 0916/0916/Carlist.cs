@@ -9,7 +9,7 @@ namespace _0916
     class Carlist
     {
         public bool Available { get; set; }
-        public string Made { get; set; }
+        public string Make { get; set; }
         public string Model { get; set; }
         public string Color { get; set; }
         public string RegNumber { get; set; }
