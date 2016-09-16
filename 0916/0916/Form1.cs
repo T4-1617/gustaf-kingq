@@ -12,8 +12,10 @@ namespace _0916
 {
     public partial class Form1 : Form
     {
+        System.Collections.ArrayList BackingStore;
         public Form1()
         {
+            BackingStore = new System.Collections.ArrayList();
             InitializeComponent();
         }
 
