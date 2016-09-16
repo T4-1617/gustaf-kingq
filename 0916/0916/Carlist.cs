@@ -10,9 +10,10 @@ namespace _0916
     {
         public bool Available { get; set; }
         public string Made { get; set; }
+        public string Model { get; set; }
         public string Color { get; set; }
-        public int RegNumber { get; set; }
-        public int Seats { get; set; }
-        public int Price { get; set; }
+        public string RegNumber { get; set; }
+        public string Seats { get; set; }
+        public string Price { get; set; }
     }
 }
