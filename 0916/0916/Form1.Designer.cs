@@ -45,7 +45,7 @@
             this.textBoxReg = new System.Windows.Forms.TextBox();
             this.textBoxColor = new System.Windows.Forms.TextBox();
             this.textBoxModel = new System.Windows.Forms.TextBox();
-            this.textBoxMade = new System.Windows.Forms.TextBox();
+            this.textBoxMake = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panelReturn = new System.Windows.Forms.Panel();
             this.textBoxThankReturn = new System.Windows.Forms.TextBox();
@@ -116,7 +116,7 @@
             this.panelAdd.Controls.Add(this.textBoxReg);
             this.panelAdd.Controls.Add(this.textBoxColor);
             this.panelAdd.Controls.Add(this.textBoxModel);
-            this.panelAdd.Controls.Add(this.textBoxMade);
+            this.panelAdd.Controls.Add(this.textBoxMake);
             this.panelAdd.Controls.Add(this.buttonAdd);
             this.panelAdd.Location = new System.Drawing.Point(25, 160);
             this.panelAdd.Name = "panelAdd";
@@ -228,13 +228,13 @@
             this.textBoxModel.TabIndex = 8;
             this.textBoxModel.TextChanged += new System.EventHandler(this.textBoxModel_TextChanged);
             // 
-            // textBoxMade
+            // textBoxMake
             // 
-            this.textBoxMade.Location = new System.Drawing.Point(99, 55);
-            this.textBoxMade.Name = "textBoxMade";
-            this.textBoxMade.Size = new System.Drawing.Size(161, 22);
-            this.textBoxMade.TabIndex = 7;
-            this.textBoxMade.TextChanged += new System.EventHandler(this.textBoxMake_TextChanged);
+            this.textBoxMake.Location = new System.Drawing.Point(99, 55);
+            this.textBoxMake.Name = "textBoxMake";
+            this.textBoxMake.Size = new System.Drawing.Size(161, 22);
+            this.textBoxMake.TabIndex = 7;
+            this.textBoxMake.TextChanged += new System.EventHandler(this.textBoxMake_TextChanged);
             // 
             // buttonAdd
             // 
@@ -417,7 +417,7 @@
         private System.Windows.Forms.TextBox textBoxReg;
         private System.Windows.Forms.TextBox textBoxColor;
         private System.Windows.Forms.TextBox textBoxModel;
-        private System.Windows.Forms.TextBox textBoxMade;
+        private System.Windows.Forms.TextBox textBoxMake;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Panel panelReturn;
         private System.Windows.Forms.ListBox listBoxBooked;
