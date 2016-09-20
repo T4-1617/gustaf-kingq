@@ -21,7 +21,7 @@ namespace _0920
         public int Phone { get; set; }
         public int ID { get; set; }
         public string Title { get; set; }
-        public int Salery { get; set; }
+        public int Salary { get; set; }
     }
 
     class Supplier
