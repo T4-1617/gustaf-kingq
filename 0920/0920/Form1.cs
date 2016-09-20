@@ -19,7 +19,18 @@ namespace _0920
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex == 0)
+            {
 
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+
+            }
+            if (comboBox1.SelectedIndex == 2)
+            {
+
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -27,12 +38,12 @@ namespace _0920
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EmpAddSave_Click(object sender, EventArgs e)
         {
-
+            label1.Text = "Time " + DateTime.Now.ToLongTimeString();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void EmpAddCancel_Click(object sender, EventArgs e)
         {
 
         }
@@ -61,5 +72,36 @@ namespace _0920
         {
 
         }
+
+        private void basicUpper_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
