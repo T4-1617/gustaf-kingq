@@ -55,10 +55,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.CusAddPhone = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.CusAddID = new System.Windows.Forms.TextBox();
             this.CusAddLname = new System.Windows.Forms.TextBox();
             this.CusAddFname = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.CusAddCancel = new System.Windows.Forms.Button();
@@ -352,10 +350,8 @@
             this.CusAdd.Controls.Add(this.label22);
             this.CusAdd.Controls.Add(this.CusAddPhone);
             this.CusAdd.Controls.Add(this.label12);
-            this.CusAdd.Controls.Add(this.CusAddID);
             this.CusAdd.Controls.Add(this.CusAddLname);
             this.CusAdd.Controls.Add(this.CusAddFname);
-            this.CusAdd.Controls.Add(this.label5);
             this.CusAdd.Controls.Add(this.label4);
             this.CusAdd.Controls.Add(this.label3);
             this.CusAdd.Controls.Add(this.CusAddCancel);
@@ -378,7 +374,7 @@
             // 
             // CusAddPhone
             // 
-            this.CusAddPhone.Location = new System.Drawing.Point(293, 16);
+            this.CusAddPhone.Location = new System.Drawing.Point(92, 82);
             this.CusAddPhone.Name = "CusAddPhone";
             this.CusAddPhone.Size = new System.Drawing.Size(100, 20);
             this.CusAddPhone.TabIndex = 9;
@@ -387,19 +383,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(236, 19);
+            this.label12.Location = new System.Drawing.Point(28, 85);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 13);
             this.label12.TabIndex = 8;
             this.label12.Text = "Phone #:";
-            // 
-            // CusAddID
-            // 
-            this.CusAddID.Location = new System.Drawing.Point(92, 78);
-            this.CusAddID.Name = "CusAddID";
-            this.CusAddID.Size = new System.Drawing.Size(100, 20);
-            this.CusAddID.TabIndex = 7;
-            this.CusAddID.TextChanged += new System.EventHandler(this.CusAddID_TextChanged);
             // 
             // CusAddLname
             // 
@@ -416,15 +404,6 @@
             this.CusAddFname.Size = new System.Drawing.Size(100, 20);
             this.CusAddFname.TabIndex = 5;
             this.CusAddFname.TextChanged += new System.EventHandler(this.CusAddFname_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Customer ID:";
             // 
             // label4
             // 
@@ -633,6 +612,7 @@
             // 
             this.CusEditID.Location = new System.Drawing.Point(103, 82);
             this.CusEditID.Name = "CusEditID";
+            this.CusEditID.ReadOnly = true;
             this.CusEditID.Size = new System.Drawing.Size(100, 20);
             this.CusEditID.TabIndex = 13;
             this.CusEditID.TextChanged += new System.EventHandler(this.CusEditID_TextChanged);
@@ -967,12 +947,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 683);
+            this.Controls.Add(this.CusAdd);
+            this.Controls.Add(this.CusEdit);
             this.Controls.Add(this.SupEdit);
             this.Controls.Add(this.SupAdd);
             this.Controls.Add(this.EmpEdit);
             this.Controls.Add(this.EmpAdd);
-            this.Controls.Add(this.CusEdit);
-            this.Controls.Add(this.CusAdd);
             this.Controls.Add(this.basicUpper);
             this.Controls.Add(this.basicLower);
             this.Controls.Add(this.listBox1);
@@ -1031,10 +1011,8 @@
         private System.Windows.Forms.Button SupEditCancel;
         private System.Windows.Forms.Button SupEditSave;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox CusAddID;
         private System.Windows.Forms.TextBox CusAddLname;
         private System.Windows.Forms.TextBox CusAddFname;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

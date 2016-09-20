@@ -15,10 +15,14 @@ namespace _0920
         System.Collections.ArrayList BackingStore;
         public Form1()
         {
+
             BackingStore = new System.Collections.ArrayList();
             InitializeComponent();
         }
-
+        int amountOfCus = 0;
+        int amountOfEmp = 0;
+        int amountOfSup = 0;
+        Random r = new Random();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
@@ -41,7 +45,17 @@ namespace _0920
             }
         }
         private void CusAdd_Paint(object sender, PaintEventArgs e) { }
-        private void CusAddSave_Click(object sender, EventArgs e) { }
+        private void CusAddSave_Click(object sender, EventArgs e)
+        {
+            BackingStore.Add(new Customer()
+            {
+                FirstName = CusAddFname.Text,
+                LastName = CusAddLname.Text,
+                ID = r,
+                Phone = Convert.ToInt32(CusAddPhone),
+            });
+            amountOfCus += 1;
+        }
         private void CusAddCancel_Click(object sender, EventArgs e) { }
         private void CusAddFname_TextChanged(object sender, EventArgs e) { }
         private void CusAddLname_TextChanged(object sender, EventArgs e) { }
