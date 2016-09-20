@@ -44,10 +44,26 @@
             this.basicUpper = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.SupAdd = new System.Windows.Forms.Panel();
+            this.SupAddCancel = new System.Windows.Forms.Button();
+            this.SupAddSave = new System.Windows.Forms.Button();
+            this.CusEdit = new System.Windows.Forms.Panel();
+            this.CusEditCancel = new System.Windows.Forms.Button();
+            this.CusEditSave = new System.Windows.Forms.Button();
+            this.EmpEdit = new System.Windows.Forms.Panel();
+            this.EmpEditCancel = new System.Windows.Forms.Button();
+            this.EmpEditSave = new System.Windows.Forms.Button();
+            this.SupEdit = new System.Windows.Forms.Panel();
+            this.SupEditCancel = new System.Windows.Forms.Button();
+            this.SupEditSave = new System.Windows.Forms.Button();
             this.EmpAdd.SuspendLayout();
             this.basicLower.SuspendLayout();
             this.CusAdd.SuspendLayout();
             this.basicUpper.SuspendLayout();
+            this.SupAdd.SuspendLayout();
+            this.CusEdit.SuspendLayout();
+            this.EmpEdit.SuspendLayout();
+            this.SupEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,7 +106,8 @@
             this.EmpAdd.Name = "EmpAdd";
             this.EmpAdd.Size = new System.Drawing.Size(510, 137);
             this.EmpAdd.TabIndex = 3;
-            this.EmpAdd.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.EmpAdd.Visible = false;
+            this.EmpAdd.Paint += new System.Windows.Forms.PaintEventHandler(this.EmpAdd_Paint);
             // 
             // EmpAddCancel
             // 
@@ -160,7 +177,7 @@
             this.CusAdd.Size = new System.Drawing.Size(510, 137);
             this.CusAdd.TabIndex = 4;
             this.CusAdd.Visible = false;
-            this.CusAdd.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.CusAdd.Paint += new System.Windows.Forms.PaintEventHandler(this.CusAdd_Paint);
             // 
             // CusAddCancel
             // 
@@ -170,7 +187,7 @@
             this.CusAddCancel.TabIndex = 1;
             this.CusAddCancel.Text = "Cancel";
             this.CusAddCancel.UseVisualStyleBackColor = true;
-            this.CusAddCancel.Click += new System.EventHandler(this.button5_Click);
+            this.CusAddCancel.Click += new System.EventHandler(this.CusAddCancel_Click);
             // 
             // CusAddSave
             // 
@@ -180,7 +197,7 @@
             this.CusAddSave.TabIndex = 0;
             this.CusAddSave.Text = "Save";
             this.CusAddSave.UseVisualStyleBackColor = true;
-            this.CusAddSave.Click += new System.EventHandler(this.button6_Click);
+            this.CusAddSave.Click += new System.EventHandler(this.CusAddSave_Click);
             // 
             // basicUpper
             // 
@@ -212,15 +229,143 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // SupAdd
+            // 
+            this.SupAdd.Controls.Add(this.SupAddCancel);
+            this.SupAdd.Controls.Add(this.SupAddSave);
+            this.SupAdd.Location = new System.Drawing.Point(54, 92);
+            this.SupAdd.Name = "SupAdd";
+            this.SupAdd.Size = new System.Drawing.Size(510, 137);
+            this.SupAdd.TabIndex = 6;
+            this.SupAdd.Visible = false;
+            this.SupAdd.Paint += new System.Windows.Forms.PaintEventHandler(this.SupAdd_Paint);
+            // 
+            // SupAddCancel
+            // 
+            this.SupAddCancel.Location = new System.Drawing.Point(432, 111);
+            this.SupAddCancel.Name = "SupAddCancel";
+            this.SupAddCancel.Size = new System.Drawing.Size(75, 23);
+            this.SupAddCancel.TabIndex = 1;
+            this.SupAddCancel.Text = "Cancel";
+            this.SupAddCancel.UseVisualStyleBackColor = true;
+            this.SupAddCancel.Click += new System.EventHandler(this.SupAddCancel_Click);
+            // 
+            // SupAddSave
+            // 
+            this.SupAddSave.Location = new System.Drawing.Point(351, 111);
+            this.SupAddSave.Name = "SupAddSave";
+            this.SupAddSave.Size = new System.Drawing.Size(75, 23);
+            this.SupAddSave.TabIndex = 0;
+            this.SupAddSave.Text = "Save";
+            this.SupAddSave.UseVisualStyleBackColor = true;
+            this.SupAddSave.Click += new System.EventHandler(this.SupAddSave_Click);
+            // 
+            // CusEdit
+            // 
+            this.CusEdit.Controls.Add(this.CusEditCancel);
+            this.CusEdit.Controls.Add(this.CusEditSave);
+            this.CusEdit.Location = new System.Drawing.Point(308, 299);
+            this.CusEdit.Name = "CusEdit";
+            this.CusEdit.Size = new System.Drawing.Size(256, 329);
+            this.CusEdit.TabIndex = 7;
+            this.CusEdit.Visible = false;
+            this.CusEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.CusEdit_Paint);
+            // 
+            // CusEditCancel
+            // 
+            this.CusEditCancel.Location = new System.Drawing.Point(178, 303);
+            this.CusEditCancel.Name = "CusEditCancel";
+            this.CusEditCancel.Size = new System.Drawing.Size(75, 23);
+            this.CusEditCancel.TabIndex = 2;
+            this.CusEditCancel.Text = "Cancel";
+            this.CusEditCancel.UseVisualStyleBackColor = true;
+            this.CusEditCancel.Click += new System.EventHandler(this.CusEditCancel_Click);
+            // 
+            // CusEditSave
+            // 
+            this.CusEditSave.Location = new System.Drawing.Point(97, 303);
+            this.CusEditSave.Name = "CusEditSave";
+            this.CusEditSave.Size = new System.Drawing.Size(75, 23);
+            this.CusEditSave.TabIndex = 2;
+            this.CusEditSave.Text = "Save";
+            this.CusEditSave.UseVisualStyleBackColor = true;
+            this.CusEditSave.Click += new System.EventHandler(this.CusEditSave_Click);
+            // 
+            // EmpEdit
+            // 
+            this.EmpEdit.Controls.Add(this.EmpEditCancel);
+            this.EmpEdit.Controls.Add(this.EmpEditSave);
+            this.EmpEdit.Location = new System.Drawing.Point(308, 299);
+            this.EmpEdit.Name = "EmpEdit";
+            this.EmpEdit.Size = new System.Drawing.Size(256, 329);
+            this.EmpEdit.TabIndex = 8;
+            this.EmpEdit.Visible = false;
+            this.EmpEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.EmpEdit_Paint);
+            // 
+            // EmpEditCancel
+            // 
+            this.EmpEditCancel.Location = new System.Drawing.Point(178, 303);
+            this.EmpEditCancel.Name = "EmpEditCancel";
+            this.EmpEditCancel.Size = new System.Drawing.Size(75, 23);
+            this.EmpEditCancel.TabIndex = 2;
+            this.EmpEditCancel.Text = "Cancel";
+            this.EmpEditCancel.UseVisualStyleBackColor = true;
+            this.EmpEditCancel.Click += new System.EventHandler(this.EmpEditCancel_Click);
+            // 
+            // EmpEditSave
+            // 
+            this.EmpEditSave.Location = new System.Drawing.Point(97, 303);
+            this.EmpEditSave.Name = "EmpEditSave";
+            this.EmpEditSave.Size = new System.Drawing.Size(75, 23);
+            this.EmpEditSave.TabIndex = 2;
+            this.EmpEditSave.Text = "Save";
+            this.EmpEditSave.UseVisualStyleBackColor = true;
+            this.EmpEditSave.Click += new System.EventHandler(this.EmpEditSave_Click);
+            // 
+            // SupEdit
+            // 
+            this.SupEdit.Controls.Add(this.SupEditCancel);
+            this.SupEdit.Controls.Add(this.SupEditSave);
+            this.SupEdit.Location = new System.Drawing.Point(308, 299);
+            this.SupEdit.Name = "SupEdit";
+            this.SupEdit.Size = new System.Drawing.Size(256, 329);
+            this.SupEdit.TabIndex = 9;
+            this.SupEdit.Visible = false;
+            this.SupEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.SupEdit_Paint);
+            // 
+            // SupEditCancel
+            // 
+            this.SupEditCancel.Location = new System.Drawing.Point(178, 303);
+            this.SupEditCancel.Name = "SupEditCancel";
+            this.SupEditCancel.Size = new System.Drawing.Size(75, 23);
+            this.SupEditCancel.TabIndex = 2;
+            this.SupEditCancel.Text = "Cancel";
+            this.SupEditCancel.UseVisualStyleBackColor = true;
+            this.SupEditCancel.Click += new System.EventHandler(this.SupEditCancel_Click);
+            // 
+            // SupEditSave
+            // 
+            this.SupEditSave.Location = new System.Drawing.Point(97, 303);
+            this.SupEditSave.Name = "SupEditSave";
+            this.SupEditSave.Size = new System.Drawing.Size(75, 23);
+            this.SupEditSave.TabIndex = 2;
+            this.SupEditSave.Text = "Save";
+            this.SupEditSave.UseVisualStyleBackColor = true;
+            this.SupEditSave.Click += new System.EventHandler(this.SupEditSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 683);
-            this.Controls.Add(this.basicLower);
-            this.Controls.Add(this.EmpAdd);
-            this.Controls.Add(this.CusAdd);
             this.Controls.Add(this.basicUpper);
+            this.Controls.Add(this.CusAdd);
+            this.Controls.Add(this.EmpAdd);
+            this.Controls.Add(this.SupAdd);
+            this.Controls.Add(this.basicLower);
+            this.Controls.Add(this.CusEdit);
+            this.Controls.Add(this.EmpEdit);
+            this.Controls.Add(this.SupEdit);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -231,6 +376,10 @@
             this.basicLower.ResumeLayout(false);
             this.CusAdd.ResumeLayout(false);
             this.basicUpper.ResumeLayout(false);
+            this.SupAdd.ResumeLayout(false);
+            this.CusEdit.ResumeLayout(false);
+            this.EmpEdit.ResumeLayout(false);
+            this.SupEdit.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,6 +403,18 @@
         private System.Windows.Forms.Panel basicUpper;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel SupAdd;
+        private System.Windows.Forms.Button SupAddCancel;
+        private System.Windows.Forms.Button SupAddSave;
+        private System.Windows.Forms.Panel CusEdit;
+        private System.Windows.Forms.Button CusEditCancel;
+        private System.Windows.Forms.Button CusEditSave;
+        private System.Windows.Forms.Panel EmpEdit;
+        private System.Windows.Forms.Button EmpEditCancel;
+        private System.Windows.Forms.Button EmpEditSave;
+        private System.Windows.Forms.Panel SupEdit;
+        private System.Windows.Forms.Button SupEditCancel;
+        private System.Windows.Forms.Button SupEditSave;
     }
 }
 

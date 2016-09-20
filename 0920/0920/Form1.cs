@@ -12,8 +12,10 @@ namespace _0920
 {
     public partial class Form1 : Form
     {
+        System.Collections.ArrayList BackingStore;
         public Form1()
         {
+            BackingStore = new System.Collections.ArrayList();
             InitializeComponent();
         }
 
@@ -21,19 +23,25 @@ namespace _0920
         {
             if (comboBox1.SelectedIndex == 0)
             {
-
+                CusAdd.Visible = true;
+                EmpAdd.Visible = false;
+                EmpAdd.Visible = false;
             }
             if (comboBox1.SelectedIndex == 1)
             {
-
+                CusAdd.Visible = false;
+                EmpAdd.Visible = true;
+                EmpAdd.Visible = false;
             }
             if (comboBox1.SelectedIndex == 2)
             {
-
+                CusAdd.Visible = false;
+                EmpAdd.Visible = false;
+                SupAdd.Visible = true;
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void EmpAdd_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -88,20 +96,79 @@ namespace _0920
 
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void CusAdd_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void CusAddSave_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void CusAddCancel_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void SupAdd_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SupAddSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SupAddCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CusEdit_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CusEditSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CusEditCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmpEditSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SupEdit_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SupEditSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SupEditCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmpEdit_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void EmpEditCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
