@@ -23,6 +23,15 @@ namespace _0920
         int amountOfEmp = 0;
         int amountOfSup = 0;
         Random r = new Random();
+
+        public void RegisterAmount()
+        {
+            AmountRegistered.Text = String.Format("You have registered {0} Customers, {1} Employees and {2} Suppliers.",
+                amountOfCus,
+                amountOfEmp,
+                amountOfSup);
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
@@ -51,10 +60,11 @@ namespace _0920
             {
                 FirstName = CusAddFname.Text,
                 LastName = CusAddLname.Text,
-                ID = r,
-                Phone = Convert.ToInt32(CusAddPhone),
+                ID = r.Next(100, 300),
+                Phone = CusAddPhone.Text,
             });
             amountOfCus += 1;
+            RegisterAmount();
         }
         private void CusAddCancel_Click(object sender, EventArgs e) { }
         private void CusAddFname_TextChanged(object sender, EventArgs e) { }
@@ -72,7 +82,20 @@ namespace _0920
 
 
         private void EmpAdd_Paint(object sender, PaintEventArgs e) { }
-        private void EmpAddSave_Click(object sender, EventArgs e) { }
+        private void EmpAddSave_Click(object sender, EventArgs e)
+        {
+            BackingStore.Add(new Employee()
+            {
+                FirstName = EmpAddFname.Text,
+                LastName = EmpAddLname.Text,
+                ID = r.Next(1, 50),
+                Phone = EmpAddPhone.Text,
+                Title = EmpAddTitle.Text,
+                Salary = Convert.ToInt32(EmpAddSalary)
+            });
+            amountOfEmp += 1;
+            RegisterAmount();
+        }
         private void EmpAddCancel_Click(object sender, EventArgs e) { }
         private void EmpAddFname_TextChanged(object sender, EventArgs e) { }
         private void EmpAddLname_TextChanged(object sender, EventArgs e) { }
@@ -93,7 +116,17 @@ namespace _0920
 
 
         private void SupAdd_Paint(object sender, PaintEventArgs e) { }
-        private void SupAddSave_Click(object sender, EventArgs e) { }
+        private void SupAddSave_Click(object sender, EventArgs e)
+        {
+            BackingStore.Add(new Supplier()
+            {
+                Contact = SupAddContact.Text,
+                Company = SupAddCompany.Text,
+                Phone = SupAddPhone.Text,
+            });
+            amountOfSup += 1;
+            RegisterAmount();
+        }
         private void SupAddCancel_Click(object sender, EventArgs e) { }
         private void SupAddContact_TextChanged(object sender, EventArgs e) { }
         private void SupAddCompany_TextChanged(object sender, EventArgs e) { }
@@ -119,7 +152,6 @@ namespace _0920
         private void basicUpperSave_Click(object sender, EventArgs e) { }
         private void basicUpperCancel_Click(object sender, EventArgs e) { }
 
-
-        label1.Text = "Time " + DateTime.Now.ToLongTimeString();
+        private void AmountRegistered_Click(object sender, EventArgs e) { }
     }
 }

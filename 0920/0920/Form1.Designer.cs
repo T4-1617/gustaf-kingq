@@ -112,6 +112,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.SupEditCancel = new System.Windows.Forms.Button();
             this.SupEditSave = new System.Windows.Forms.Button();
+            this.AmountRegistered = new System.Windows.Forms.Label();
             this.EmpAdd.SuspendLayout();
             this.basicLower.SuspendLayout();
             this.CusAdd.SuspendLayout();
@@ -942,11 +943,22 @@
             this.SupEditSave.UseVisualStyleBackColor = true;
             this.SupEditSave.Click += new System.EventHandler(this.SupEditSave_Click);
             // 
+            // AmountRegistered
+            // 
+            this.AmountRegistered.AutoSize = true;
+            this.AmountRegistered.Location = new System.Drawing.Point(60, 236);
+            this.AmountRegistered.Name = "AmountRegistered";
+            this.AmountRegistered.Size = new System.Drawing.Size(308, 13);
+            this.AmountRegistered.TabIndex = 11;
+            this.AmountRegistered.Text = "You have registered 0 Customers, 0 Employees and 0 Suppliers.";
+            this.AmountRegistered.Click += new System.EventHandler(this.AmountRegistered_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 683);
+            this.Controls.Add(this.AmountRegistered);
             this.Controls.Add(this.CusAdd);
             this.Controls.Add(this.CusEdit);
             this.Controls.Add(this.SupEdit);
@@ -1066,6 +1078,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label AmountRegistered;
     }
 }
 
