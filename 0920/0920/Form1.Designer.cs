@@ -33,15 +33,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EmpAdd = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.EmpAddSalary = new System.Windows.Forms.TextBox();
             this.EmpAddTitle = new System.Windows.Forms.TextBox();
-            this.EmpAddID = new System.Windows.Forms.TextBox();
             this.EmpAddPhone = new System.Windows.Forms.TextBox();
             this.EmpAddLname = new System.Windows.Forms.TextBox();
             this.EmpAddFname = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -113,6 +110,7 @@
             this.SupEditCancel = new System.Windows.Forms.Button();
             this.SupEditSave = new System.Windows.Forms.Button();
             this.AmountRegistered = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.EmpAdd.SuspendLayout();
             this.basicLower.SuspendLayout();
             this.CusAdd.SuspendLayout();
@@ -143,6 +141,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(247, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.Text = "- Please select who you wish to register - ";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
@@ -155,15 +154,12 @@
             // EmpAdd
             // 
             this.EmpAdd.Controls.Add(this.label17);
-            this.EmpAdd.Controls.Add(this.EmpAddSalary);
             this.EmpAdd.Controls.Add(this.EmpAddTitle);
-            this.EmpAdd.Controls.Add(this.EmpAddID);
             this.EmpAdd.Controls.Add(this.EmpAddPhone);
             this.EmpAdd.Controls.Add(this.EmpAddLname);
             this.EmpAdd.Controls.Add(this.EmpAddFname);
             this.EmpAdd.Controls.Add(this.label11);
             this.EmpAdd.Controls.Add(this.label10);
-            this.EmpAdd.Controls.Add(this.label9);
             this.EmpAdd.Controls.Add(this.label8);
             this.EmpAdd.Controls.Add(this.label7);
             this.EmpAdd.Controls.Add(this.label6);
@@ -185,29 +181,13 @@
             this.label17.TabIndex = 14;
             this.label17.Text = "Adding An Employee";
             // 
-            // EmpAddSalary
-            // 
-            this.EmpAddSalary.Location = new System.Drawing.Point(293, 90);
-            this.EmpAddSalary.Name = "EmpAddSalary";
-            this.EmpAddSalary.Size = new System.Drawing.Size(100, 20);
-            this.EmpAddSalary.TabIndex = 13;
-            this.EmpAddSalary.TextChanged += new System.EventHandler(this.EmpAddSalary_TextChanged);
-            // 
             // EmpAddTitle
             // 
-            this.EmpAddTitle.Location = new System.Drawing.Point(293, 64);
+            this.EmpAddTitle.Location = new System.Drawing.Point(258, 32);
             this.EmpAddTitle.Name = "EmpAddTitle";
             this.EmpAddTitle.Size = new System.Drawing.Size(100, 20);
             this.EmpAddTitle.TabIndex = 12;
             this.EmpAddTitle.TextChanged += new System.EventHandler(this.EmpAddTitle_TextChanged);
-            // 
-            // EmpAddID
-            // 
-            this.EmpAddID.Location = new System.Drawing.Point(293, 34);
-            this.EmpAddID.Name = "EmpAddID";
-            this.EmpAddID.Size = new System.Drawing.Size(100, 20);
-            this.EmpAddID.TabIndex = 11;
-            this.EmpAddID.TextChanged += new System.EventHandler(this.EmpAddID_TextChanged);
             // 
             // EmpAddPhone
             // 
@@ -236,29 +216,20 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(217, 93);
+            this.label11.Location = new System.Drawing.Point(217, 64);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.Size = new System.Drawing.Size(161, 13);
             this.label11.TabIndex = 7;
-            this.label11.Text = "Salary:";
+            this.label11.Text = "ID and Salary shall be generated";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(217, 67);
+            this.label10.Location = new System.Drawing.Point(217, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 13);
             this.label10.TabIndex = 6;
             this.label10.Text = "Title:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(217, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Employee ID:";
             // 
             // label8
             // 
@@ -348,6 +319,7 @@
             // 
             // CusAdd
             // 
+            this.CusAdd.Controls.Add(this.label5);
             this.CusAdd.Controls.Add(this.label22);
             this.CusAdd.Controls.Add(this.CusAddPhone);
             this.CusAdd.Controls.Add(this.label12);
@@ -953,18 +925,27 @@
             this.AmountRegistered.Text = "You have registered 0 Customers, 0 Employees and 0 Suppliers.";
             this.AmountRegistered.Click += new System.EventHandler(this.AmountRegistered_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(226, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "An assigned ID will be generated.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 683);
-            this.Controls.Add(this.AmountRegistered);
             this.Controls.Add(this.CusAdd);
+            this.Controls.Add(this.EmpEdit);
+            this.Controls.Add(this.EmpAdd);
+            this.Controls.Add(this.AmountRegistered);
             this.Controls.Add(this.CusEdit);
             this.Controls.Add(this.SupEdit);
             this.Controls.Add(this.SupAdd);
-            this.Controls.Add(this.EmpEdit);
-            this.Controls.Add(this.EmpAdd);
             this.Controls.Add(this.basicUpper);
             this.Controls.Add(this.basicLower);
             this.Controls.Add(this.listBox1);
@@ -1028,13 +1009,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox EmpAddSalary;
         private System.Windows.Forms.TextBox EmpAddTitle;
-        private System.Windows.Forms.TextBox EmpAddID;
         private System.Windows.Forms.TextBox EmpAddPhone;
         private System.Windows.Forms.TextBox EmpAddLname;
         private System.Windows.Forms.TextBox EmpAddFname;
@@ -1079,6 +1057,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label AmountRegistered;
+        private System.Windows.Forms.Label label5;
     }
 }
 

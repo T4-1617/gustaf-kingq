@@ -6,14 +6,6 @@ using System.Threading.Tasks;
 
 namespace _0920
 {
-    class Customer
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int ID { get; set; }
-        public string Phone { get; set; }
-    }
-
     class Employee
     {
         public string FirstName { get; set; }
@@ -22,12 +14,14 @@ namespace _0920
         public string Phone { get; set; }
         public string Title { get; set; }
         public int Salary { get; set; }
-    }
 
-    class Supplier
-    {
-        public string Contact { get; set; }
-        public string Company { get; set; }
-        public string Phone { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return string.Format("{0} {1}", FirstName, LastName);
+            }
+
+        }
     }
 }

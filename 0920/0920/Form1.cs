@@ -24,6 +24,7 @@ namespace _0920
         int amountOfSup = 0;
         Random r = new Random();
 
+
         public void RegisterAmount()
         {
             AmountRegistered.Text = String.Format("You have registered {0} Customers, {1} Employees and {2} Suppliers.",
@@ -65,6 +66,9 @@ namespace _0920
             });
             amountOfCus += 1;
             RegisterAmount();
+            CusAddFname.Text = String.Empty;
+            CusAddLname.Text = String.Empty;
+            CusAddPhone.Text = String.Empty;
         }
         private void CusAddCancel_Click(object sender, EventArgs e) { }
         private void CusAddFname_TextChanged(object sender, EventArgs e) { }
@@ -91,18 +95,20 @@ namespace _0920
                 ID = r.Next(1, 50),
                 Phone = EmpAddPhone.Text,
                 Title = EmpAddTitle.Text,
-                Salary = Convert.ToInt32(EmpAddSalary)
+                Salary = r.Next(100, 300),
             });
             amountOfEmp += 1;
             RegisterAmount();
+            EmpAddFname.Text = String.Empty;
+            EmpAddLname.Text = String.Empty;
+            EmpAddPhone.Text = String.Empty;
+            EmpAddTitle.Text = String.Empty;
         }
         private void EmpAddCancel_Click(object sender, EventArgs e) { }
         private void EmpAddFname_TextChanged(object sender, EventArgs e) { }
         private void EmpAddLname_TextChanged(object sender, EventArgs e) { }
         private void EmpAddPhone_TextChanged(object sender, EventArgs e) { }
-        private void EmpAddID_TextChanged(object sender, EventArgs e) { }
         private void EmpAddTitle_TextChanged(object sender, EventArgs e) { }
-        private void EmpAddSalary_TextChanged(object sender, EventArgs e) { }
 
         private void EmpEdit_Paint(object sender, PaintEventArgs e) { }
         private void EmpEditSave_Click(object sender, EventArgs e) { }
@@ -126,6 +132,9 @@ namespace _0920
             });
             amountOfSup += 1;
             RegisterAmount();
+            SupAddContact.Text = String.Empty;
+            SupAddCompany.Text = String.Empty;
+            SupAddPhone.Text = String.Empty;
         }
         private void SupAddCancel_Click(object sender, EventArgs e) { }
         private void SupAddContact_TextChanged(object sender, EventArgs e) { }
@@ -139,9 +148,33 @@ namespace _0920
         private void SupEditCompany_TextChanged(object sender, EventArgs e) { }
         private void SupEditPhone_TextChanged(object sender, EventArgs e) { }
 
+        //foreach (Customer xxx in Customers)
+        //{
+        //    listBox1.Items.Add(xxx);
+        //    //listBox1.DisplayMember = "FirstName";
+        //    listBox1.DisplayMember = "FullName"; //Detta MÅSTE vara en PROPERTY
+        //}
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (Customer xxx in BackingStore)
+            {
+                listBox1.Items.Add(xxx);
+                listBox1.DisplayMember = "Fullname";
+            }
+            foreach (Employee xxx in BackingStore)
+            {
+                listBox1.Items.Add(xxx);
+                listBox1.DisplayMember = "Fullname";
+            }
+            foreach (Supplier xxx in BackingStore)
+            {
+                listBox1.Items.Add(xxx);
+                listBox1.DisplayMember = "Fullname";
+            }
+        }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) { }
-         
+
+
 
         private void basicLower_Paint(object sender, PaintEventArgs e) { }
         private void basicLowerSave_Click(object sender, EventArgs e) { }
