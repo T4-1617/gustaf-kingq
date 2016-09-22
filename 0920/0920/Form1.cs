@@ -58,6 +58,7 @@ namespace _0920
             SupAddContact.Text = String.Empty;
             SupAddCompany.Text = String.Empty;
             SupAddPhone.Text = String.Empty;
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -194,21 +195,42 @@ namespace _0920
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (Customer xxx in BackingStore)
-            {
-                listBox1.Items.Add(xxx);
-                listBox1.DisplayMember = "FullName";
-            }
-            foreach (Employee xxx in BackingStore)
-            {
-                listBox1.Items.Add(xxx);
-                listBox1.DisplayMember = "FullName";
-            }
-            foreach (Supplier xxx in BackingStore)
-            {
-                listBox1.Items.Add(xxx);
-                listBox1.DisplayMember = "FullName";
-            }
+            //foreach (Customer xxx in BackingStore)
+            //{
+            //    listBox1.Items.Add(xxx);
+            //    listBox1.DisplayMember = "FullName";
+            //}
+            //foreach (Employee xxx in BackingStore)
+            //{
+            //    listBox1.Items.Add(xxx);
+            //    listBox1.DisplayMember = "FullName";
+            //}
+            //foreach (Supplier xxx in BackingStore)
+            //{
+            //    listBox1.Items.Add(xxx);
+            //    listBox1.DisplayMember = "FullName";
+            //}
+            //foreach (var xxx in BackingStore)
+            //{
+            //    switch (xxx.GetType().Name)
+            //    {
+            //        case "Customer":
+            //            listBox1.Items.Add("Customer:" + xxx);
+            //            break;
+
+            //        case "Employee":
+            //            listBox1.Items.Add("Employee:" + xxx);
+            //            break;
+
+            //        case "Supplier":
+            //            listBox1.Items.Add("Supplier:" + xxx);
+            //            break;
+
+            //        default:
+            //            break;
+            //    }
+            //}
+
         }
 
         private void basicLower_Paint(object sender, PaintEventArgs e) { }
