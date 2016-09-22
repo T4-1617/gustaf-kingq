@@ -44,10 +44,9 @@ namespace _0920
             EmpEdit.Visible = false;
             SupEdit.Visible = false;
         }
-        public void EmptyPanels()
+        public void EmptyAdd()
         {
             HideAdd();
-            HideEdit();
             CusAddFname.Text = String.Empty;
             CusAddLname.Text = String.Empty;
             CusAddPhone.Text = String.Empty;
@@ -58,7 +57,21 @@ namespace _0920
             SupAddContact.Text = String.Empty;
             SupAddCompany.Text = String.Empty;
             SupAddPhone.Text = String.Empty;
+        }
 
+        public void EmptyEdit()
+        {
+            HideEdit();
+            CusEditFname.Text = String.Empty;
+            CusEditLname.Text = String.Empty;
+            CusEditID.Text = String.Empty;
+            CusEditPhone.Text = String.Empty;
+            EmpEditFname.Text = String.Empty;
+            EmpEditLname.Text = String.Empty;
+            EmpEditID.Text = String.Empty;
+            EmpEditPhone.Text = String.Empty;
+            EmpEditTitle.Text = String.Empty;
+            EmpEditSalary.Text = String.Empty;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,11 +111,11 @@ namespace _0920
             });
             amountOfCus += 1;
             RegisterAmount();
-            EmptyPanels();
+            EmptyAdd();
         }
         private void CusAddCancel_Click(object sender, EventArgs e)
         {
-            EmptyPanels();
+            EmptyAdd();
         }
         private void CusAddFname_TextChanged(object sender, EventArgs e) { }
         private void CusAddLname_TextChanged(object sender, EventArgs e) { }
@@ -113,7 +126,7 @@ namespace _0920
         private void CusEditSave_Click(object sender, EventArgs e) { }
         private void CusEditCancel_Click(object sender, EventArgs e)
         {
-            EmptyPanels();
+            EmptyEdit();
         }
         private void CusEditFname_TextChanged(object sender, EventArgs e) { }
         private void CusEditLname_TextChanged(object sender, EventArgs e) { }
@@ -136,11 +149,11 @@ namespace _0920
             });
             amountOfEmp += 1;
             RegisterAmount();
-            EmptyPanels();
+            EmptyAdd();
         }
         private void EmpAddCancel_Click(object sender, EventArgs e)
         {
-            EmptyPanels();
+            EmptyAdd();
         }
         private void EmpAddFname_TextChanged(object sender, EventArgs e) { }
         private void EmpAddLname_TextChanged(object sender, EventArgs e) { }
@@ -151,7 +164,7 @@ namespace _0920
         private void EmpEditSave_Click(object sender, EventArgs e) { }
         private void EmpEditCancel_Click(object sender, EventArgs e)
         {
-            EmptyPanels();
+            EmptyEdit();
         }
         private void EmpEditFname_TextChanged(object sender, EventArgs e) { }
         private void EmpEditLname_TextChanged(object sender, EventArgs e) { }
@@ -173,11 +186,11 @@ namespace _0920
             });
             amountOfSup += 1;
             RegisterAmount();
-            EmptyPanels();
+            EmptyAdd();
         }
         private void SupAddCancel_Click(object sender, EventArgs e)
         {
-            EmptyPanels();
+            EmptyAdd();
         }
         private void SupAddContact_TextChanged(object sender, EventArgs e) { }
         private void SupAddCompany_TextChanged(object sender, EventArgs e) { }
@@ -187,7 +200,7 @@ namespace _0920
         private void SupEditSave_Click(object sender, EventArgs e) { }
         private void SupEditCancel_Click(object sender, EventArgs e)
         {
-            EmptyPanels();
+            EmptyAdd();
         }
         private void SupEditContact_TextChanged(object sender, EventArgs e) { }
         private void SupEditCompany_TextChanged(object sender, EventArgs e) { }
