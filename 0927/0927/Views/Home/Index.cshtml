@@ -15,28 +15,48 @@
         background-color: black;
         margin: 100px;
     }
+    .p_left {
+        float: left;
+        border: 1px solid yellow;
+    }
+    .p_right {
+        float: right;
+        border: 1px solid yellow;
+    }
     #div1_Banner {
         text-align: center;
         display: block;
         border: 12px solid yellow;
         color: yellow;
-        padding:20px
     }
     #div2_Links {
         color: yellow;
         text-align: center;
+        padding:25px;
+        font-size: xx-large;
     }
-    #div3_ {
+    #div3_welcome {
         display: block;
         text-align: right;
         border: 12px solid yellow;
         color: yellow;
-        padding:20px
+        padding-bottom: 500px
     }
+    #div3_image {
+        float: left;
+        border: 1px solid yellow;
+        width: 350px;
+        height: 350px;
+    }
+    #div3_1_text {
+        float: right;
+        padding-left: 500px;
+    }
+
 </style>
 <body style="background-color: black;">
     <div id="div1_Banner">
-        <h1 style="color: yellow;">
+        <h1>
             Gustaf V. M. Wallin - Hirable
         </h1>
         <p>
@@ -44,11 +64,21 @@
         </p>
     </div>
     <div id="div2_Links">
-        <a href="http://www.w3schools.com">Home</a> | <a href="http://www.w3schools.com">Details</a> 
+        <a href="http://www.w3schools.com">Home</a> | <a href="http://www.w3schools.com">About</a> 
         <hr />
     </div>
-    <div id="div3_">
-
+    <div id="div3_welcome">
+        <img id="div3_image" src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/14440847_868360683298303_7502699474625952974_n.jpg?oh=c95870c607bf298e4de3e34b4ff4fa6b&oe=588361DC" alt="Mountain View">
+        <p class="p_left"></p>
+        <div id="div3_1_text">
+            <p class="p_right">
+                Now ask yourself, "Did I hear that right?". Well yes indeed, this lad is hirable. Gustaf Wallin has four years of programming
+                experience behind him, co-developer of "Steampunk and Napalm" together with Fredrik Svahn and Axel Ingelsson Fredler as
+                well as proud nominee-finalist to ITG Sodertorn's Guldkretsen award 2016. With his superpower of coding and commiting, Gustaf
+                intends to use this power to end world hunger, solve national disputes and code a self-playing gamepad (let's face it, that would
+                be pretty sweet).
+            </p>
+        </div>
     </div>
 </body>
 </html>
