@@ -8,51 +8,64 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-</head>
-<style>
-    body {
-        align-content: center;
-        background-color: black;
-        margin: 100px;
-    }
+    <style>
+        <style > body {
+            align-content: center;
+            background-color: black;
+            margin: 100px;
+            border: 3px solid red;
+            padding: 2px;
+        }
 
-    .p_left {
-        text-align: left;
-        float: left;
-        border: 5px solid yellow;
-        padding: 50px;
-        padding-left: 750px;
-        padding-right: 150px;
-    }
-    .p_right {
-    }
-    #div1_Banner {
-        text-align: center;
-        display: block;
-        border: 12px solid yellow;
-        color: yellow;
-    }
-    #div2_Links {
-        color: yellow;
-        text-align: center;
-        padding: 25px;
-        font-size: xx-large;
-    }
-    #div3_welcome {
-        display: block;
-        text-align: right;
-        border: 12px solid yellow;
-        color: yellow;
-        padding-bottom: 500px;
-    }
-    #div3_image {
-        float: left;
-        width: 350px;
-        height: 350px;
-        padding: 50px;
-    }
-    
-</style>
+        #div1_Banner {
+            text-align: center;
+            display: block;
+            border: 12px solid yellow;
+            color: yellow;
+        }
+
+        #div2_Links {
+            color: yellow;
+            text-align: center;
+            padding: 25px;
+            font-size: xx-large;
+        }
+
+        #div3_welcome {
+            height: 80%;
+            display: block;
+            text-align: center;
+            align-content: center;
+            border: 12px solid yellow;
+            color: yellow;
+            padding-bottom: 27.5%;
+        }
+
+        #div3_image1 {
+            float: left;
+            border: 1px solid yellow;
+            width: 350px;
+            height: 350px;
+            margin: 50px;
+        }
+
+        #div3_image2 {
+            float: left;
+            border: 1px solid yellow;
+            width: 350px;
+            height: 350px;
+            margin: 50px;
+        }
+
+        .p_right {
+            display: inline-block;
+            float: right;
+            border: 1px solid green;
+            margin: 50px;
+        }
+    </style>
+</head>
+
 <body style="background-color: black;">
     <div id="div1_Banner">
         <h1>
@@ -67,7 +80,7 @@
         <hr />
     </div>
     <div id="div3_welcome">
-        <img id="div3_image" src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/14440847_868360683298303_7502699474625952974_n.jpg?oh=c95870c607bf298e4de3e34b4ff4fa6b&oe=588361DC" align="left" alt="Mountain View">
+        <img id="div3_image1" src="https://scontent.xx.fbcdn.net/v/t1.0-9/14502716_868360666631638_699733912506356031_n.jpg?oh=65acf20d93361f88c08d38bb2f0efa83&oe=586D2D7A" align="right" alt="div3_image1"/>
         <p class="p_left">
             Now ask yourself, "Did I hear that right?". Well yes indeed, this lad is hirable. Gustaf Wallin has four years of programming
             experience behind him, co-developer of "Steampunk and Napalm" together with Fredrik Svahn and Axel Ingelsson Fredler as
@@ -75,6 +88,7 @@
             intends to use this power to end world hunger, solve national disputes and code a self-playing gamepad (let's face it, that would
             be pretty sweet).
         </p>
+        <img id="div3_image2" src="https://scontent.xx.fbcdn.net/v/t1.0-9/14441167_868360669964971_795930360930689612_n.jpg?oh=fe80436069e69e3e108f19ac1efdc8b0&oe=5880F878" align="left" alt="div3_image2"/>
     </div>
 </body>
 </html>
