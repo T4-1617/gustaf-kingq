@@ -13,5 +13,9 @@ namespace _0927.Controllers
         {
             return View();
         }
+        public ActionResult About()
+        {
+            return View();
+        }
     }
 }
